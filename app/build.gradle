@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.ar.sceneform.plugin'
 }
 
 android {
@@ -30,6 +31,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures{
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -41,4 +47,19 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // sceneForm and AR core dependency
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
+    implementation 'com.google.ar:core:1.38.0'
+
+    // view model dependency
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    implementation "androidx.activity:activity-ktx:1.7.2"
 }
+
+sceneform.asset('sampledata/chroma_key_video.obj',
+        'sampledata/chroma_key_video_material.mat',
+        'sampledata/chroma_key_video.sfa',
+        'src/main/res/raw/chroma_key_video')
+
