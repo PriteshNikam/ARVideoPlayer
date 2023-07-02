@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ARVideoPlayer</string>
+    <string name="stop">Stop</string>
+    <string name="replay">replay</string>
 </resources>

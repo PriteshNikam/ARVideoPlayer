@@ -1,4 +1,4 @@
-package com.example.arvideoplayer.utils
+package com.example.arvideoplayer
 
 import androidx.lifecycle.ViewModel
 

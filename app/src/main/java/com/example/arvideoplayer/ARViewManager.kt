@@ -1,13 +1,11 @@
 package com.example.arvideoplayer
 
-
 import android.annotation.SuppressLint
 import android.content.Context
 import android.media.MediaPlayer
 import android.net.Uri
 import android.view.MotionEvent
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
 import com.example.arvideoplayer.utils.Constants
 import com.example.arvideoplayer.utils.Logger
 import com.google.ar.core.Anchor
@@ -20,7 +18,6 @@ import com.google.ar.sceneform.rendering.Color
 import com.google.ar.sceneform.rendering.ExternalTexture
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
-
 
 class ARViewManager(
     private val arViewCallback: ARViewCallback,
@@ -301,5 +298,10 @@ class ARViewManager(
         anchorNode?.removeChild(videoNode)
         videoNode = null
         videoTexture = null
+    }
+
+    fun destroyARMedia() {
+        arFragment?.arSceneView?.destroy()
+        mediaPlayer?.release()
     }
 }
