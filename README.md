@@ -2,6 +2,36 @@
 
 ARVideoPlayer is an Android application that utilizes sceneForm and ARCore to deliver augmented reality video playback directly in your environment. With the ability to place videos without the need for plane detection.
 
+Refered this google Sceneform chroma key project -
+```
+https://github.com/google-ar/sceneform-android-sdk/tree/v1.15.0/samples/chromakeyvideo
+```
+
+
+Dependencies for Sceneform and AR core -  
+```
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
+    implementation 'com.google.ar:core:1.38.0' 
+```
+## Chroma Key Video Instructions
+
+To set up the Chroma Key Video functionality in your project, please follow these steps:
+
+1. Download the required files from the Google Sceneform Chroma Key project or find them in this project.
+
+2. Copy the `Sampledata` directory as it is to your project root directory.
+
+3. Create a `raw` directory inside the `res` directory of your Android project. This directory will be used to store your Chroma Key video files, or alternatively, you can use a streaming URL to render the video in AR.
+
+4. Ensure that the following code is added to the `build.gradle` file of your Android project. This code reads the sample directory and specifies where to create the `.sfb` file named as `chroma_key_video`.
+
+```
+sceneform.asset('sampledata/models/chroma_key_video.obj',
+        'sampledata/models/chroma_key_video_material.mat',
+        'sampledata/models/chroma_key_video.sfa',
+        'src/main/res/raw/chroma_key_video')
+  ```
+
 ## Key Features:
 
 1. **Immersive Augmented Reality Video Playback:** ARVideoPlayer uses ARCore, a technology that combines virtual elements with the real world, to create an exciting experience. It allows users to watch videos in an augmented-reality environment.
